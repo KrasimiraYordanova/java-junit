@@ -1,4 +1,4 @@
-package rpj_lab;
+package rpg_lab;
 
 // import org.junit.Assert;
 import org.junit.Before;

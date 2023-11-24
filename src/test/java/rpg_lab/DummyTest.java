@@ -52,7 +52,7 @@ public class DummyTest {
     }
 
     @Test
-    public void isDead_Dummy_Health_Zero_Or_Below() {
+    public void isDead_Dummy_Health_Below_Zero() {
         this.dummy = new Dummy(-5, EXPERIENCE);
         boolean isDead = dummy.isDead();
         assertTrue(isDead);
