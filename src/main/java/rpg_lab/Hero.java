@@ -1,17 +1,20 @@
 package rpg_lab;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Hero {
 
     private String name;
     private int experience;
-    private Weapon weapon;
+    private List<Weapon> inventory;
 
     public Hero(String name, Weapon axe) {
         this.name = name;
         this.experience = 0;
-        this.weapon = axe;
+        this.inventory = new ArrayList<>();
+        this.inventory.add(axe);
     }
 
     public String getName() {
@@ -22,12 +25,12 @@ public class Hero {
         return this.experience;
     }
 
-    public Weapon getWeapon() {
-        return this.weapon;
+    public List<Weapon> getWeapon() {
+        return this.inventory;
     }
 
     public void attack(Target target) {
-        this.weapon.attack(target);
+        this.inventory.stream().findFirst().orElseThrow(() -> new IllegalStateException("No weapon")).attack(target);
 
         if (target.isDead()) {
             this.experience += target.giveExperience();
