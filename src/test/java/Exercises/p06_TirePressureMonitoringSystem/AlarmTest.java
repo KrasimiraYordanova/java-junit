@@ -9,6 +9,9 @@ import rpg_lab.Target;
 import static org.junit.Assert.*;
 
 public class AlarmTest {
+    private static final double LOW_PRESSURE = 14.0;
+    private static final double HIGH_PRESSURE = 22.0;
+    private static final double NORMAL_PRESSURE = 20.0;
 
     private Alarm alarm;
     private Sensor fakeSensor;
